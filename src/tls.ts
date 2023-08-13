@@ -63,23 +63,23 @@ class Token {
 
     console.log("___________")
 
-    console.log("'community' labeled token: ", tokens.filter(item => item.isCommunity == true).length)
-    console.log("'old-registry' labeled token: ", tokens.filter(item => item.isOldRegistry == true).length)
-    console.log("'unknown' labeled token: ", tokens.filter(item => item.isUnknown == true).length)
+    console.log("'community' labeled tokens: ", tokens.filter(item => item.isCommunity == true).length)
+    console.log("'old-registry' labeled tokens: ", tokens.filter(item => item.isOldRegistry == true).length)
+    console.log("'unknown' labeled tokens: ", tokens.filter(item => item.isUnknown == true).length)
 
     console.log("___________")
 
 
     const communityNoVolume = []
     tokens.filter(item => item.isCommunity == true && item.statMonth === 0).forEach(x => communityNoVolume.push(x.symbol))
-    console.log("Token 'community' labelled with no monthly volume: ", communityNoVolume.length)
+    console.log("Token 'community' labeled with no monthly volume: ", communityNoVolume.length)
 
 
     const oldNoVolume = []
     tokens.filter(item => item.isOldRegistry == true && item.statMonth === 0).forEach(x => oldNoVolume.push(x.symbol))
-    console.log("Token 'old-registry' labelled with no monthly volume: ", oldNoVolume.length)
+    console.log("Token 'old-registry' labeled with no monthly volume: ", oldNoVolume.length)
        
     const unknownWithVolume = []
     tokens.filter(item => item.isUnknown == true && item.statMonth != 0).forEach(x => unknownWithVolume.push(x.symbol))
-    console.log("Token 'unknown' labelled with monthly volume: ", unknownWithVolume.length)
+    console.log("Token 'unknown' labeled with monthly volume: ", unknownWithVolume.length)
 })();
